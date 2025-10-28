@@ -18,13 +18,25 @@ html,body{
     flex-direction: column;
 }
 
-#iniciar{
+#botao-iniciar{
     background-color: #7E27DB;
     color: white;
 
     font-size: 3em;
 
     margin: auto;
+
+    padding-block: 0.4em;
+    padding-inline: 1em;
+
+    border: 1px solid #531a8f;
+    border-radius: 5%;
+
+    cursor: pointer;
+}
+
+#botao-iniciar:hover{
+    background-color: #531a8f;
 }
 
 .logo{
@@ -44,15 +56,17 @@ nav{
     margin: auto;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2em;
 }
 
 nav a{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-svg{
-    width: fit-content;
-    margin-block: 100%;
-}
 
