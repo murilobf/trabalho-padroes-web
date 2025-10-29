@@ -25,6 +25,10 @@
     background-color: #531a8f;
 }
 
+form label{
+    display: block;
+}
+
 h1{
     color:#6A12D7;
 }
