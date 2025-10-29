@@ -3,16 +3,23 @@
 <html lang="pt-BR">
     <head>
         <link rel="stylesheet" href="../stylesheet.css">
+        <script defer src="../index.js"></script>
         <title>FOCO</title>
     </head>
 
     <body>
         <header>
-            <img class="hamburguer" src="../imgs/hamburguer.png">
+            <img class="hamburguer" src="../imgs/hamburguer.png" onclick="abrirBarraLateral()">
             <img class="logo" src="../imgs/logo.png">
         </header>
-
+        
         <main>
+            <div class = "sidebar">
+                <img class="hamburguer" src="../imgs/hamburguer.png" onclick="fecharBarraLateral()">
+                <a href="./home.html">Início</a>
+                <a href="./sobre.html">Sobre</a>
+            </div>
+
             <section id="texto-inicio">
                 <h1>Qual o poder do seu foco?</h1>
 

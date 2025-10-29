@@ -40,6 +40,8 @@ h1{
 
     width: 4em;
     height: 5em;
+
+    cursor: pointer;
 }
 
 header{
@@ -89,6 +91,41 @@ nav a{
 
 nav a:hover svg{
     fill:#531a8f
+}
+
+.sidebar{
+    position: fixed;
+
+    width: 0;
+
+    top: 0;
+    left: 0;
+    height: 100%;
+
+    z-index: 1;
+
+    overflow-x: hidden;
+
+    background-color: #000000;
+
+    transition: 0.4s;
+}
+
+.sidebar a{
+
+    padding-top: 10em;
+    padding-left: 33%;
+
+    display: block;
+
+    text-decoration: none;
+    color: white;
+
+    font-size: large;
+}
+
+.sidebar a:hover{
+    color:#6A12D7;
 }
 
 #texto-inicio{
