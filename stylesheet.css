@@ -33,6 +33,15 @@ h1{
     color:#6A12D7;
 }
 
+.hamburguer{
+    position: absolute;
+    top: 1.5em;
+    left: 2em;
+
+    width: 4em;
+    height: 5em;
+}
+
 header{
     background-color: #000000;
 
