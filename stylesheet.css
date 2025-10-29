@@ -87,3 +87,11 @@ nav a:hover svg{
 video{
     margin: auto;
 }
+
+.video-atrapalhar{
+    position: relative;
+
+    width: 25%;
+
+    transform: translate(150%, 100%) rotate(45deg);
+}
