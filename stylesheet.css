@@ -108,3 +108,57 @@ video{
 
     transform: translate(150%, 100%) rotate(45deg);
 }
+
+#sobre{
+    text-align: justify;
+}
+
+.container-sobre{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding-block: 2em;
+}
+
+.sobre-head {
+    grid-column: span 2;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.sobre-info {
+    background-color: #000000; 
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.container-sobre > div:nth-child(2) { 
+    grid-area: 2 / 1 / 3 / 2; 
+}
+
+.sobre-img {
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    align-items: stretch;
+}
+
+.sobre-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.container-sobre > div:nth-child(4) {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.container-sobre > div:nth-child(5) {
+    grid-area: 3 / 2 / 4 / 3; 
+}
