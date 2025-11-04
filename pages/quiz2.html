@@ -1,38 +1,59 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-    <head>
-        <link rel="stylesheet" href="../stylesheet.css">
-        <script defer src="../index.js"></script>
-        <title>FOCO</title>
-    </head>
 
-    <body>
-        <header>
-            <img class="hamburguer" src="../imgs/hamburguer.png" onclick="abrirBarraLateral()">
-            <img class="logo" src="../imgs/logo.png">
-        </header>
+<head>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <script defer src="../index.js"></script>
+    <title>FOCO</title>
+</head>
 
-        <main>
-            <div class = "sidebar">
-                <img class="hamburguer" src="../imgs/hamburguer.png" onclick="fecharBarraLateral()">
-                <a href="./home.html">Início</a>
-                <a href="./sobre.html">Sobre</a>
-            </div>
+<body>
+    <header>
+        <button onclick=menuClicado() class="botaoMenu">
+            <img class="hamburguer" src="../imgs/hamburguer.png">
+        </button>
 
-            <nav>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%" class="atual"></circle></svg>
-            </nav>
+        <img class="logo" src="../imgs/logo.png">
+    </header>
 
-            <a class="botao" href="./relatorio.html">Finalizar</a> <!--Temporariamente até ser feita a página de relatório-->
-        </main>
+    <main>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="./home.html">Início</a></li>
+            </ul>
+            <ul>
+                <li><a href="./sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+
+        <nav>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%" class="atual"></circle>
+            </svg>
+        </nav>
+        <button class="botao"> 
+            <a href="./relatorio.html">Finalizar</a>
+        </button>
         
-        <footer>
+        <!--Temporariamente até ser feita a página de relatório-->
+    </main>
 
-        </footer>
-    </body>
+    <footer>
+
+    </footer>
+</body>
+
 </html>
