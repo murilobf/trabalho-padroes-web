@@ -3,27 +3,26 @@
 }
 
 .botao{
-    text-decoration: none;
-    
+    text-decoration: none;    
     background-color: #7E27DB;
-    color: white;
-
     font-size: 2em;
-
     margin: auto;
-
     padding-block: 0.4em;
     padding-inline: 1em;
-
     border: 1px solid #531a8f;
-    border-radius: 5%;
-
+    border-radius: 8px;
     cursor: pointer;
+}
+
+.botao a {
+    color: white;
+    text-decoration: none;
 }
 
 .botao:hover{
     background-color: #531a8f;
 }
+
 
 form label{
     display: block;
@@ -33,23 +32,77 @@ h1{
     color:#6A12D7;
 }
 
-.hamburguer{
-    position: absolute;
-    top: 1.5em;
-    left: 2em;
-
-    width: 4em;
-    height: 5em;
-
-    cursor: pointer;
-}
-
 header{
     background-color: #000000;
-
     display: flex;
+    height: 4em;
+    align-items: center;
+}
 
-    height: 8em;
+.botaoMenu{
+    position: absolute;
+    left: 1em;
+    cursor: pointer;
+    background: none;        
+    color: inherit;         
+    border: none;     
+    padding: 0;           
+    font: inherit;          
+    cursor: pointer;        
+    outline: inherit;
+}
+
+.hamburguer{
+    width: 3em;
+    height: 3em;
+    background-color: transparent;
+}
+
+.logo{
+    margin: auto;
+    width: 5em;
+    height: 4em;
+}
+
+.sidebar{
+    position: fixed;
+    width: 200px;
+    top: 4em;
+    left: -300px;
+    height: 100vh;
+    z-index: 1;
+    overflow-x: hidden;
+    background-color: #000000;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding:5px 20px 5px 20px
+}
+
+.sidebar.open {
+    left: 0; 
+}
+
+.sidebar a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    padding: 10px 5px 10px 5px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar a:hover{
+    background-color:#6A12D7;
+    border-radius: 8px;
+}
+
+.sidebar ul{
+    padding-left: 0;
+    width: 100%;
 }
 
 html,body{
@@ -58,10 +111,6 @@ html,body{
 
     display: flex;
     flex-direction: column;
-}
-
-.logo{
-    margin: auto;
 }
 
 main{
@@ -73,13 +122,10 @@ main{
 
 nav{
     width: 50%;
-
     margin: auto;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 2em;
 }
 
@@ -93,44 +139,8 @@ nav a:hover svg{
     fill:#531a8f
 }
 
-.sidebar{
-    position: fixed;
-
-    width: 0;
-
-    top: 0;
-    left: 0;
-    height: 100%;
-
-    z-index: 1;
-
-    overflow-x: hidden;
-
-    background-color: #000000;
-
-    transition: 0.4s;
-}
-
-.sidebar a{
-
-    padding-top: 10em;
-    padding-left: 33%;
-
-    display: block;
-
-    text-decoration: none;
-    color: white;
-
-    font-size: large;
-}
-
-.sidebar a:hover{
-    color:#6A12D7;
-}
-
 #texto-inicio{
     margin: auto;
-
     text-align: center;
 }
 
@@ -140,8 +150,6 @@ video{
 
 .video-atrapalhar{
     position: relative;
-
     width: 25%;
-
     transform: translate(150%, 100%) rotate(45deg);
 }

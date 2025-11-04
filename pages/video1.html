@@ -1,46 +1,69 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-    <head>
-        <link rel="stylesheet" href="../stylesheet.css">
-        <script defer src="../index.js"></script>
-        <title>FOCO</title>
-    </head>
 
-    <body>
-        <header>
-            <img class="hamburguer" src="../imgs/hamburguer.png" onclick="abrirBarraLateral()">
-            <img class="logo" src="../imgs/logo.png">
-        </header>
+<head>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <script defer src="../index.js"></script>
+    <title>FOCO</title>
+</head>
 
-        <main>
-            <div class = "sidebar">
-                <img class="hamburguer" src="../imgs/hamburguer.png" onclick="fecharBarraLateral()">
-                <a href="./home.html">Início</a>
-                <a href="./sobre.html">Sobre</a>
-            </div>
+<body>
+    <header>
+        <button onclick=menuClicado() class="botaoMenu">
+            <img class="hamburguer" src="../imgs/hamburguer.png">
+        </button>
 
-            <video class="video-atrapalhar" loop autoplay>
-                <source src="../videos/placeholder_atrapalhar.mp4">
-            </video>
+        <img class="logo" src="../imgs/logo.png">
+    </header>
 
-            <video controls width="50%" loop>
-                <source src="../videos/placeholder.mp4">
-            </video>
+    <main>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="./home.html">Início</a></li>
+            </ul>
+            <ul>
+                <li><a href="./sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
 
-            <nav>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%" class="atual"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-            </nav>
+        <video class="video-atrapalhar" loop autoplay>
+            <source src="../videos/placeholder_atrapalhar.mp4">
+        </video>
 
-            <a class="botao" href="./quiz1.html">Próximo</a>
-        </main>
-        
-        <footer>
+        <video controls width="50%" loop>
+            <source src="../videos/placeholder.mp4">
+        </video>
 
-        </footer>
-    </body>
+        <nav>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%" class="atual"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+        </nav>
+
+        <button class="botao"> 
+            <a href="./quiz1.html">
+                Próximo
+            </a> 
+        </button>
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
 </html>
