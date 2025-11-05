@@ -1,9 +1,5 @@
-const barraLeteral = document.querySelector(".sidebar")
+const barraLateral = document.querySelector(".sidebar")
 
-function abrirBarraLateral(){
-    barraLeteral.style.width = "10%";
-}
-
-function fecharBarraLateral(){
-    barraLeteral.style.width = "0";
+function menuClicado(){
+    barraLateral.classList.toggle('open');
 }

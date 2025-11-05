@@ -9,16 +9,22 @@
 
     <body>
         <header>
-            <img class="hamburguer" src="../imgs/hamburguer.png" onclick="abrirBarraLateral()">
-            <img class="logo" src="../imgs/logo.png">
-        </header>
+        <button onclick=menuClicado() class="botaoMenu">
+            <img class="hamburguer" src="../imgs/hamburguer.png">
+        </button>
 
-        <main>
-            <div class = "sidebar">
-                <img class="hamburguer" src="../imgs/hamburguer.png" onclick="fecharBarraLateral()">
-                <a href="./home.html">Início</a>
-                <a href="./sobre.html">Sobre</a>
-            </div>
+        <img class="logo" src="../imgs/logo.png">
+    </header>
+
+    <main>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="./home.html">Início</a></li>
+            </ul>
+            <ul>
+                <li><a href="./sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
 
             <section id="sobre">
             <h1>Sobre nós</h1>
