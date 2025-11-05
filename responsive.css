@@ -110,54 +110,60 @@
         transform: translate(150%, 100%) rotate(45deg);
     }
     
-    #sobre{
-        text-align: justify;
-    }
-    
     .container-sobre{
         display: flex;
         flex-direction: column;
         gap: 30px; 
-    
+
         max-width: 1200px; 
         margin: 0 auto;
-        padding-block: 2em;
+        padding: 50px 20px;
     }
-    
-    .sobre-head {    
+
+    .sobre-head {
         text-align: center;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
     }
-    
-    .sobre-info {
+
+    .membros {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        padding: 30px 0;
+    }
+
+    .membro {
+        display: flex;
+        flex-direction: column; 
         align-items: center;
-        display: flex;
-    
-        border-radius: 8px;
-    
-        background-color: #000000; 
-        color: white;
-    
-        
-        min-height: 150px;
-        padding: 20px;
-    
+        text-align: center;
+        width: 150px; 
     }
-    
-    .sobre-img {        
-        display: flex;
-        align-items: stretch;
-    }
-    
-    .sobre-img img {
-        border-radius: 8px;
-        
-        height: 100%;
+
+    .foto-perfil img {
         width: 100%;
-        
+        height: 100%;
         object-fit: cover;
     }
-    
+
+    .nomes {
+        font-size: 1.1em;
+        margin: 0;
+    }
+
+    .sobre-info {       
+        display: block; 
+        background-color: transparent;
+        margin: 0 auto;
+        text-align: justify; 
+        max-width: 1050px;
+    }
+
+    .sobre-info p {
+        font-size: larger;
+    }
+
     footer {
         background-color: #000000;
         color: white;
@@ -171,12 +177,12 @@
         padding: 1.5em 2.5em;
         width: 100%;
     }
-    
+
     .footer-content {
         color: #ccc;
         font-size: 0.9em;
     }
-    
+
     .footer-content p {
         margin: 0.25em 0;
     }

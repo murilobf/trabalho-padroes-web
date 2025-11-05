@@ -109,69 +109,58 @@ video{
     transform: translate(150%, 100%) rotate(45deg);
 }
 
-#sobre{
-    text-align: justify;
-}
-
 .container-sobre{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px; 
 
     max-width: 1200px; 
     margin: 0 auto;
-    padding-block: 2em;
+    padding: 50px 20px;
 }
 
 .sobre-head {
-    grid-column: span 2;
-
     text-align: center;
-    
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
-.sobre-info {
+.membros {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+
+.membro {
+    display: flex;
+    flex-direction: column; 
     align-items: center;
-    display: flex;
-
-    border-radius: 8px;
-
-    background-color: #000000; 
-    color: white;
-
-    
-    min-height: 150px;
-    padding: 20px;
-
+    text-align: center;
+    width: 150px; 
 }
 
-.container-sobre > div:nth-child(2) { 
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-.sobre-img {
-    grid-area: 2 / 2 / 3 / 3;
-    
-    display: flex;
-    align-items: stretch;
-}
-
-.sobre-img img {
-    border-radius: 8px;
-    
-    height: 100%;
+.foto-perfil img {
     width: 100%;
-    
+    height: 100%;
     object-fit: cover;
 }
 
-.container-sobre > div:nth-child(4) {
-    grid-area: 3 / 1 / 4 / 2;
+.nomes {
+    font-size: 1.1em;
+    margin: 0;
 }
 
-.container-sobre > div:nth-child(5) {
-    grid-area: 3 / 2 / 4 / 3; 
+.sobre-info {       
+    display: block; 
+    background-color: transparent;
+    margin: 0 auto;
+    text-align: justify; 
+    max-width: 1050px;
+}
+
+.sobre-info p {
+    font-size: larger;
 }
 
 footer {
