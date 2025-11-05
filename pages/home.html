@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-    <head>
-        <link rel="stylesheet" href="../stylesheet.css">
-        <title>FOCO</title>
-    </head>
 
-    <body>
-        <header>
+<head>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <script defer src="../index.js"></script>
+    <title>FOCO</title>
+</head>
+
+<body>
+    <header>
+        <button onclick=menuClicado() class="botaoMenu">
             <img class="hamburguer" src="../imgs/hamburguer.png">
-            <img class="logo" src="../imgs/logo.png">
-        </header>
+        </button>
 
-        <main>
-            <section id="texto-inicio">
-                <h1>Qual o poder do seu foco?</h1>
+        <img class="logo" src="../imgs/logo.png">
+    </header>
 
-                <p>Em cada etapa, um novo desafio.</p>
-                <p>Sua missão: manter o foco no que realmente importa</p>
-                <p>Vamos começar?</p>
-            </section>
+    <main>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="./home.html">Início</a></li>
+                <li><a href="./sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
 
-            <nav>
-                <svg ><circle r="20" cx="50%" cy="50%" class="atual"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-                <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
-            </nav>
+        <section id="texto-inicio">
+            <h1>Qual o poder do seu foco?</h1>
 
-            <a class="botao" href="./video1.html">Jogar</a>
-        </main>
-        
-        <footer>
+            <p>Em cada etapa, um novo desafio.</p>
+            <p>Sua missão: manter o foco no que realmente importa</p>
+            <p>Vamos começar?</p>
+        </section>
 
-        </footer>
-    </body>
+        <nav>
+            <svg>
+                <circle r="20" cx="50%" cy="50%" class="atual"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle r="20" cx="50%" cy="50%"></circle>
+            </svg>
+        </nav>
+
+        <button class="botao">
+            <a href="./video1.html">Jogar</a>
+        </button>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
 </html>
