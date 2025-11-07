@@ -111,6 +111,7 @@ html,body{
 
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 main{
@@ -225,8 +226,5 @@ footer {
 .footer-content {
     color: #ccc;
     font-size: 0.9em;
-}
-
-.footer-content p {
     margin: 0.25em 0;
 }

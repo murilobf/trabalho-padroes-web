@@ -9,16 +9,20 @@
 
     <body>
         <header>
-            <img class="hamburguer" src="../imgs/hamburguer.png" onclick="abrirBarraLateral()">
+            <button onclick=menuClicado() class="botaoMenu">
+                <img class="hamburguer" src="../imgs/hamburguer.png">
+            </button>
+
             <img class="logo" src="../imgs/logo.png">
         </header>
 
         <main>
-            <div class = "sidebar">
-                <img class="hamburguer" src="../imgs/hamburguer.png" onclick="fecharBarraLateral()">
-                <a href="./home.html">Início</a>
-                <a href="./sobre.html">Sobre</a>
-            </div>
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="./home.html">Início</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
 
             <nav>
                 <svg ><circle r="20" cx="50%" cy="50%"></circle></svg>
@@ -31,7 +35,7 @@
         </main>
         
         <footer>
-
+            <p class="footer-content">&copy; 2025 [Nome do Projeto]. Todos os direitos reservados. Desenvolvido por estudantes de Sistemas de Informação.</p>
         </footer>
     </body>
 </html>
