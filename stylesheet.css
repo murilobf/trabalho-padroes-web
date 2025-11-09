@@ -58,6 +58,24 @@ header{
     background-color: transparent;
 }
 
+.gif-rotativo{
+    width: 30%;
+    margin: auto;
+    margin-top: 3em;
+    position: relative;
+    animation: roda 3s infinite;
+}
+
+@keyframes roda {
+
+    from{
+        transform: rotate(0deg) translateY(5em) rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg) translateY(5em) rotate(-360deg);
+    }
+}
+
 .logo{
     margin: auto;
     width: 5em;
