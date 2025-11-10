@@ -158,7 +158,32 @@ nav a:hover svg{
     fill:#531a8f
 }
 
-#texto-inicio{
+.nota-estrela{
+    font-size:4em;
+    color:gray;
+
+    margin: auto;
+    padding: 0 0.5em;
+
+    width:fit-content;
+    border: 0.075em gray solid;
+    border-radius: 2em;
+}
+
+.nota-estrela ativo{
+    color: yellow;
+}
+
+.nota-texto{
+    background-color: #aa52eeb4;
+    color:#370a5a;
+
+    font-size: 2em;
+
+    padding: 0.33em;
+}
+
+#texto-inicio,#feedback{
     margin: auto;
     text-align: center;
 }
