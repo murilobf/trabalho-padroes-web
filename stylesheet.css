@@ -158,6 +158,11 @@ nav a:hover svg{
     fill:#531a8f
 }
 
+nav svg{
+    width: 3em;
+    flex-shrink: 0;
+}
+
 .nota-estrela{
     font-size:4em;
     color:gray;
@@ -189,6 +194,7 @@ nav a:hover svg{
 }
 
 video{
+    width: 60%;
     margin: auto;
 }
 
