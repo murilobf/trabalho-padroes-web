@@ -5,8 +5,8 @@ function menuClicado(){
     barraLateral.classList.toggle('open');
 }
 
-function pegaResposta(){
-    const resposta = document.querySelector('input[name="quiz1"]:checked').value;
+function pegaResposta(num){
+    const resposta = document.querySelector(`input[name="quiz${num}"]:checked`).value;
 
-    console.log(resposta)
+    //TODO: Pegar qual seria a resposta certa (talvez guardar também as que não estejam tão erradas), verificar a resposta marcada e bater com a certa
 }
