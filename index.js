@@ -4,26 +4,21 @@ const videoFoco = document.getElementById('video-foco') || document.getElementBy
 let distracaoAtiva = false;
 let modalJaDisparado = false;
 
-const GATILHOS = [
-    {
-        idElemento: 'modal-distracao',
-        tempoDisparo: 5,
-        duracao: 0,
-        tipo: 'modal'
-    },
-    {
-        idElemento: 'gif-carrey',
-        tempoDisparo: 8,
-        duracao: 4,
-        tipo: 'gif'
-    },
-    {
-        idElemento: 'gif-miyagi',
-        tempoDisparo: 15,
-        duracao: 3,
-        tipo: 'gif'
-    }
-];
+let GATILHOS = [];
+
+if (document.getElementById("video-foco")) {
+    // Tela 1
+    GATILHOS = [
+        { idElemento: 'modal-distracao', tempoDisparo: 5, tipo: 'modal' },
+    ];
+} else if (document.getElementById("video-foco-2")) {
+    // Tela 2
+    GATILHOS = [
+        { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false },
+        { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false }
+    ];
+
+}
 
 function ativarModal(elemento) {
     if (!elemento || modalJaDisparado) return;
@@ -39,7 +34,7 @@ window.fecharModal = function () {
     modal.classList.remove('modal-ativo');
 
     setTimeout(() => { distracaoAtiva = false; }, 1000);
-    console.log('Modal DESATIVADO. Vídeo retomado.');
+    console.log('Modal DESATIVADO');
 }
 
 
@@ -75,7 +70,7 @@ if (videoFoco) {
         GATILHOS.forEach(gatilho => {
             const elemento = document.getElementById(gatilho.idElemento);
 
-            if (elemento && !distracaoAtiva) {
+            if (elemento && !gatilho.disparado && !distracaoAtiva ) {
                 if (tempoAtual >= gatilho.tempoDisparo) {
 
                     if (gatilho.tipo === 'modal') {
@@ -83,6 +78,7 @@ if (videoFoco) {
                             ativarModal(elemento);
                         }
                     } else if (gatilho.tipo === 'gif') {
+                        gatilho.disparado = true;
                         ativarGif(elemento, gatilho.duracao);
                     }
                 }

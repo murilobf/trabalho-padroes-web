@@ -61,17 +61,6 @@ header{
     background-color: transparent;
 }
 
-.gif-rotativo{
-    width: 30%;
-    margin: auto;
-    margin-top: 3em;
-    position: relative;
-    animation: roda 3s infinite;
-    opacity: 0;
-    transition: opacity 0.5s ease; 
-    pointer-events: none;
-}
-
 #modal-distracao {
     position: fixed;
     bottom: 20px;
@@ -81,6 +70,12 @@ header{
     opacity: 0;
     visibility: hidden; 
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+#modal-distracao.modal-ativo {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-conteudo {
@@ -114,10 +109,15 @@ header{
     cursor: pointer;
 }
 
-.modal-ativo {
-    transform: translateX(-120%); 
-    opacity: 1;
-    visibility: visible;
+.gif-rotativo{
+    display: none;       
+    position: fixed;     
+    top: 10%;
+    right: 5%;       
+    width: 200px;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .gif-ativo {
@@ -125,6 +125,7 @@ header{
     position: fixed; 
     top: 10%;
     right: 5%;
+    opacity: 1;
     z-index: 999; 
     animation: roda 3s infinite; 
 }
