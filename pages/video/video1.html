@@ -4,34 +4,33 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stylesheet.css">
-    <link rel="stylesheet" href="../responsive.css">
-    <script defer src="../index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../stylesheet.css">
+    <link rel="stylesheet" href="../../responsive.css">
+    <script defer src="../../index.js"></script>
     <title>FOCO</title>
 </head>
 
 <body>
     <header>
         <button onclick=menuClicado() class="botaoMenu">
-            <img class="hamburguer" src="../imgs/hamburguer.png">
+            <img class="hamburguer" src="../../imgs/hamburguer.png">
         </button>
 
-        <img class="logo" src="../imgs/logo.png">
-    </header>
-
-    <main>
+        <img class="logo" src="../../imgs/logo.png">
         <nav class="sidebar">
             <ul>
-                <li><a href="./home.html">Início</a></li>
-                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="../home.html">Início</a></li>
+                <li><a href="../sobre.html">Sobre</a></li>
             </ul>
         </nav>
-
-        <video controls loop>
-            <source src="../videos/video1.mp4">
+    </header>
+    <main>
+        <video controls loop id="video-foco">
+            <source src="../../videos/video1.mp4">
         </video>
-
-        <img class="gif-rotativo" src="../videos/coruja.gif">
 
         <nav>
             <svg>
@@ -52,15 +51,22 @@
         </nav>
 
         <button class="botao">
-            <a href="./quiz1.html">
+            <a href="../quiz/quiz1.html">
                 Próximo
             </a>
         </button>
-
+        <div id="modal-distracao">
+            <div class="modal-conteudo">
+                <h3>⚠️ Alerta de Notificação Irrelevante!</h3>
+                <p>Seu foco está sendo redirecionado. Clique em "Ignorar" para continuar o vídeo.</p>
+                <button onclick="fecharModal()">Ignorar</button>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p class="footer-content">&copy; 2025 [Nome do Projeto]. Todos os direitos reservados. Desenvolvido por estudantes de Sistemas de Informação.</p>
+        <p class="footer-content">&copy; 2025 [Nome do Projeto]. Todos os direitos reservados. Desenvolvido por
+            estudantes de Sistemas de Informação.</p>
     </footer>
 </body>
 

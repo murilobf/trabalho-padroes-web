@@ -67,6 +67,66 @@ header{
     margin-top: 3em;
     position: relative;
     animation: roda 3s infinite;
+    opacity: 0;
+    transition: opacity 0.5s ease; 
+    pointer-events: none;
+}
+
+#modal-distracao {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    transform: translateX(120%); 
+    opacity: 0;
+    visibility: hidden; 
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.modal-conteudo {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-conteudo h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #8A38F5;
+}
+
+.modal-conteudo p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.modal-conteudo button {
+    background-color: #7E27DB;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-ativo {
+    transform: translateX(-120%); 
+    opacity: 1;
+    visibility: visible;
+}
+
+.gif-ativo {
+    display: block !important; 
+    position: fixed; 
+    top: 10%;
+    right: 5%;
+    z-index: 999; 
+    animation: roda 3s infinite; 
 }
 
 @keyframes roda {
@@ -194,6 +254,29 @@ nav svg{
     padding: 0.33em;
 }
 
+#texto-inicio {
+    margin: 50px auto 30px auto; 
+    text-align: center;
+    max-width: 800px; 
+}
+
+#texto-inicio h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #6A12D7; 
+}
+
+#texto-inicio p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.5;
+}
+
+#texto-inicio p:last-of-type {
+    font-weight: bold;
+    margin-top: 1.5em;
+    color: #333;
+}
 #texto-inicio,#feedback{
     margin: auto;
     text-align: center;
