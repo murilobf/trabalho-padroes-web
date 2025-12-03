@@ -7,41 +7,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../stylesheet.css">
-    <link rel="stylesheet" href="../responsive.css">
-    <script defer src="../index.js"></script>
+    <link rel="stylesheet" href="../../stylesheet.css">
+    <link rel="stylesheet" href="../../responsive.css">
+    <script defer src="../../index.js"></script>
     <title>FOCO</title>
 </head>
 
 <body>
     <header>
         <button onclick=menuClicado() class="botaoMenu">
-            <img class="hamburguer" src="../imgs/hamburguer.png">
+            <img class="hamburguer" src="../../imgs/hamburguer.png">
         </button>
 
-        <img class="logo" src="../imgs/logo.png">
+        <img class="logo" src="../../imgs/logo.png">
         <nav class="sidebar">
             <ul>
-                <li><a href="./home.html">Início</a></li>
-                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="../home.html">Início</a></li>
+                <li><a href="../sobre.html">Sobre</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="feedback">
-            <h1>Seus Resultados</h1>
+        <img class="gif-rotativo" src="../../videos/carrey.gif" id="gif-carrey">
+        <video controls loop id="video-foco-2">
+            <source src="../../videos/video2.mp4">
+        </video>
 
-            <p class="nota-texto">XX% das perguntas respondidas corretamente</p>
-            <p class="nota-estrela   ">
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-                <span>★</span>
-            </p>
-            <p class="texto-feedback" style="font-size: 2em; font-weight: bold;">PÁGINA SOB CONSTRUÇÃO</p>
-        </section>
+<<<<<<< HEAD:pages/video/video2.html
+        <img class="gif-rotativo" src="../../videos/miyagi.gif" id="gif-miyagi">
+=======
+        <img class="gif-rotativo" src="../videos/coruja.gif" alt="Coruja rodando">
+>>>>>>> main:pages/video1.html
 
         <nav>
             <svg>
@@ -54,13 +51,17 @@
                 <circle r="20" cx="50%" cy="50%"></circle>
             </svg>
             <svg>
-                <circle r="20" cx="50%" cy="50%"></circle>
+                <circle r="20" cx="50%" cy="50%" class="atual"></circle>
             </svg>
             <svg>
                 <circle r="20" cx="50%" cy="50%"></circle>
             </svg>
         </nav>
-
+        <button class="botao">
+            <a href="../quiz/quiz2.html">
+                Próximo
+            </a>
+        </button>
     </main>
 
     <footer>

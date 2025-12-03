@@ -1,12 +1,60 @@
 @media (max-width: 768px) {
 
-    video{
+    video {
         width: 90%;
     }
 
-    /* 
-    Precisa maiores ajustes pra versão final de mais coisas que possam ser adaptadas, por causa qua a versão normal
-    já foi feita pensando em responsividade até certo ponto.
-    */
+}
 
+@media (min-width: 768px) {
+    .botaoMenu {
+        display: none;
+    }
+
+    .sidebar {
+        position: static;
+        width: auto;
+        height: auto;
+        left: auto;
+        top: auto;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        flex-direction: row;
+        z-index: auto;
+        transition: none;
+        padding: 0;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: auto;
+    }
+
+    .sidebar li {
+        margin: 0 15px;
+        list-style: none;
+    }
+
+    .sidebar a {
+        padding: 5px 0px;
+        color: white;
+        border-bottom: none;
+        display: block;
+        font-size: 1em;
+    }
+
+    .sidebar a:hover {
+        background-color: transparent;
+        color: #8A38F5;
+    }
+
+    .logo{
+        padding-left: 150px;
+    }
 }
