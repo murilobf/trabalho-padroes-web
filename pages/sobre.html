@@ -16,7 +16,7 @@
 <body>
     <header>
         <button onclick=menuClicado() class="botaoMenu">
-            <img class="hamburguer" src="../imgs/hamburguer.png">
+            <img class="hamburguer" src="../imgs/hamburguer.png" alt="Icone de menu">
         </button>
 
         <img class="logo" src="../imgs/logo.png">
@@ -30,7 +30,7 @@
 
     <main>
         <section id="sobre" class="container-sobre">
-            <h1 class="sobre-head">Sobre nós</h1>
+            <h1 class="sobre-head">Equipe</h1>
             <article class="membros">
                 <div class="membro">
                     <picture class="foto-perfil">
@@ -40,6 +40,14 @@
                     </picture>
                     <h2 class="nomes">Ana Flávia</h2>
                 </div>
+                <figure class="membro">
+                    <picture class="foto-perfil">
+                        <source media="(min-width:650px)" srcset="../imgs/userimgex.jpg">
+                        <source media="(min-width:465px)" srcset="../imgs/userimgex.jpg">
+                        <img src="../imgs/userimgex.jpg" alt="foto perfil Ana Flávia">
+                    </picture>
+                    <figcaption class="nomes">AAAAAAAAAAAAA</figcaption>
+                </figure>
 
                 <div class="membro">
                     <picture class="foto-perfil">
@@ -89,6 +97,7 @@
             </article>
 
             <article class="sobre-info">
+                <h2>Sobre nós</h2>
                 <p>Somos um grupo de estudantes da disciplina de Padrões Web, orientados pelo professor Leonelo. Estamos
                     desenvolvendo um projeto com o tema central "Foco", utilizando as tecnologias HTML, CSS e
                     JavaScript.</p>
@@ -102,7 +111,7 @@
     </main>
 
     <footer>
-        <p class="footer-content">&copy; 2025 [Nome do Projeto]. Todos os direitos reservados. Desenvolvido por
+        <p class="footer-content">&copy; 2025 Awareness Quiz. Todos os direitos reservados. Desenvolvido por
             estudantes de Sistemas de Informação.</p>
     </footer>
 </body>
