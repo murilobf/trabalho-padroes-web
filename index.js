@@ -17,7 +17,12 @@ if (document.getElementById("video-foco")) {
         { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false },
         { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false }
     ];
-
+} else if (document.getElementById("video-foco-3")) {
+    // Tela 3
+    GATILHOS = [
+        { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false },
+        { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false }
+    ];
 }
 
 function ativarModal(elemento) {
