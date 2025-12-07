@@ -9,6 +9,12 @@
     }
     nav{
         gap:0.5em;
+        margin-block: 2em;
+    }
+    nav svg{
+        height: 2em;
+        width: 2em;
+        border-radius: 50%;
     }
 }
 
