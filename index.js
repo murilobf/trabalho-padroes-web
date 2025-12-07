@@ -21,12 +21,13 @@ if (document.getElementById("video-foco")) {
     // Tela 3
     GATILHOS = [
         { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false },
-        { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false }
+        { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false },
+        { idElemento: 'botao-da-distracao', tempoDisparo: 180, duracao: 3, tipo: 'mudancaUI', disparado: false } 
     ];
 } else if (document.getElementById("video-foco-4")) {
     // Tela 3
     GATILHOS = [
-        { idElemento: 'gif-carrey', tempoDisparo: 51, duracao: 10, tipo: 'gif', disparado: false },
+        { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false }
     ];
 }
 
@@ -73,23 +74,61 @@ function desativarGif(elemento) {
     distracaoAtiva = false;
 }
 
+function mudarCorBotao(idBotao) {
+    const botao = document.getElementById(idBotao);
+
+    if (botao) {
+        // 1. Salva a cor atual (caso queira garantir, mas geralmente limpar resolve)
+        
+        // 2. Aplica a nova cor direto no elemento
+        // O navegador vai usar a regra 'transition' do CSS para fazer isso suavemente
+        botao.style.backgroundColor = '#461b65ff'; // Laranja avermelhado
+        botao.style.transform = 'scale(1.1)';    // Aumenta um pouco
+        
+        console.log('Distração de UI: Cor mudando suavemente via ID.');
+
+        // 3. Depois de 3 segundos, limpamos o estilo inline
+        setTimeout(() => {
+            // Ao definir como string vazia '', o elemento volta a obedecer a cor do CSS original
+            botao.style.backgroundColor = ''; 
+            botao.style.transform = '';
+            
+            console.log('Distração de UI: Voltando ao normal.');
+        }, 3000);
+    }
+}
+
 if (videoFoco) {
     videoFoco.addEventListener('timeupdate', () => {
         const tempoAtual = videoFoco.currentTime;
 
         GATILHOS.forEach(gatilho => {
+            // Verifica se é gatilho de UI ou elemento normal
             const elemento = document.getElementById(gatilho.idElemento);
 
-            if (elemento && !gatilho.disparado && !distracaoAtiva ) {
+            // Adicionei a verificação (!gatilho.disparado) para não repetir
+            if ((elemento || gatilho.tipo === 'mudancaUI') && !gatilho.disparado) { 
+                
+                // Nota: Removi o !distracaoAtiva aqui para a cor do botão,
+                // pois ela pode acontecer junto com um GIF se você quiser.
+                // Se quiser que seja exclusivo, mantenha o && !distracaoAtiva.
+                
                 if (tempoAtual >= gatilho.tempoDisparo) {
 
                     if (gatilho.tipo === 'modal') {
-                        if (!modalJaDisparado) {
+                        if (!modalJaDisparado && !distracaoAtiva) {
                             ativarModal(elemento);
                         }
                     } else if (gatilho.tipo === 'gif') {
+                        if(!distracaoAtiva){
+                            gatilho.disparado = true;
+                            ativarGif(elemento, gatilho.duracao);
+                        }
+                    } 
+                    // NOVO: Lógica para mudança de UI
+                    else if (gatilho.tipo === 'mudancaUI') {
                         gatilho.disparado = true;
-                        ativarGif(elemento, gatilho.duracao);
+                        mudarCorBotao(gatilho.idElemento);
                     }
                 }
             }
