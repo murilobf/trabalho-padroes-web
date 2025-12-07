@@ -200,7 +200,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding:5px 20px 5px 20px
+    padding:5px 20px 5px 20px;
 }
 
 .sidebar.open {
@@ -241,7 +241,6 @@ html,body{
 
 main{
     padding: 5em;
-
     display: flex;
     flex-direction: column;
 }
