@@ -1,6 +1,9 @@
 const barraLateral = document.querySelector(".sidebar");
 const modal = document.getElementById('modal-distracao');
-const videoFoco = document.getElementById('video-foco') || document.getElementById('video-foco-2') || document.getElementById('video-foco-3');
+const videoFoco = document.getElementById('video-foco') || 
+                document.getElementById('video-foco-2') || 
+                document.getElementById('video-foco-3') ||
+                document.getElementById('video-foco-4');
 let distracaoAtiva = false;
 let modalJaDisparado = false;
 
@@ -20,14 +23,12 @@ if (document.getElementById("video-foco")) {
 } else if (document.getElementById("video-foco-3")) {
     // Tela 3
     GATILHOS = [
-        { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false },
-        { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false },
         { idElemento: 'botao-da-distracao', tempoDisparo: 180, duracao: 3, tipo: 'mudancaUI', disparado: false } 
     ];
 } else if (document.getElementById("video-foco-4")) {
-    // Tela 3
+    // Tela 4
     GATILHOS = [
-        { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false }
+        { idElemento: 'distracao-progresso', tempoDisparo: 20, duracao: 3, tipo: 'progresso', disparado: false }
     ];
 }
 
@@ -78,18 +79,12 @@ function mudarCorBotao(idBotao) {
     const botao = document.getElementById(idBotao);
 
     if (botao) {
-        // 1. Salva a cor atual (caso queira garantir, mas geralmente limpar resolve)
-        
-        // 2. Aplica a nova cor direto no elemento
-        // O navegador vai usar a regra 'transition' do CSS para fazer isso suavemente
-        botao.style.backgroundColor = '#461b65ff'; // Laranja avermelhado
-        botao.style.transform = 'scale(1.1)';    // Aumenta um pouco
+        botao.style.backgroundColor = '#461b65ff';
+        botao.style.transform = 'scale(1.1)';
         
         console.log('Distração de UI: Cor mudando suavemente via ID.');
 
-        // 3. Depois de 3 segundos, limpamos o estilo inline
         setTimeout(() => {
-            // Ao definir como string vazia '', o elemento volta a obedecer a cor do CSS original
             botao.style.backgroundColor = ''; 
             botao.style.transform = '';
             
@@ -98,23 +93,38 @@ function mudarCorBotao(idBotao) {
     }
 }
 
+function distracaoProgresso() {
+    const todasBolinhas = document.querySelectorAll('main nav svg circle');
+    const bolinhaReal = document.querySelector('main nav svg circle.atual');
+
+    if (!todasBolinhas.length || !bolinhaReal) return;
+
+    bolinhaReal.classList.remove('atual');
+
+    let indiceAleatorio;
+    do {
+        indiceAleatorio = Math.floor(Math.random() * todasBolinhas.length);
+    } while (todasBolinhas[indiceAleatorio] === bolinhaReal);
+
+    todasBolinhas[indiceAleatorio].classList.add('atual');
+    
+    console.log(`UI Distração: Progresso pulou para a bolinha ${indiceAleatorio + 1}`);
+
+    setTimeout(() => {
+        todasBolinhas[indiceAleatorio].classList.remove('atual');
+        bolinhaReal.classList.add('atual');
+        console.log("UI Distração: Progresso restaurado.");
+    }, 2500);
+}
+
 if (videoFoco) {
     videoFoco.addEventListener('timeupdate', () => {
         const tempoAtual = videoFoco.currentTime;
 
         GATILHOS.forEach(gatilho => {
-            // Verifica se é gatilho de UI ou elemento normal
             const elemento = document.getElementById(gatilho.idElemento);
-
-            // Adicionei a verificação (!gatilho.disparado) para não repetir
-            if ((elemento || gatilho.tipo === 'mudancaUI') && !gatilho.disparado) { 
-                
-                // Nota: Removi o !distracaoAtiva aqui para a cor do botão,
-                // pois ela pode acontecer junto com um GIF se você quiser.
-                // Se quiser que seja exclusivo, mantenha o && !distracaoAtiva.
-                
+            if (elemento && !gatilho.disparado) { 
                 if (tempoAtual >= gatilho.tempoDisparo) {
-
                     if (gatilho.tipo === 'modal') {
                         if (!modalJaDisparado && !distracaoAtiva) {
                             ativarModal(elemento);
@@ -124,11 +134,12 @@ if (videoFoco) {
                             gatilho.disparado = true;
                             ativarGif(elemento, gatilho.duracao);
                         }
-                    } 
-                    // NOVO: Lógica para mudança de UI
-                    else if (gatilho.tipo === 'mudancaUI') {
+                    } else if (gatilho.tipo === 'mudancaUI') {
                         gatilho.disparado = true;
                         mudarCorBotao(gatilho.idElemento);
+                    } else if (gatilho.tipo === 'progresso') {
+                        gatilho.disparado = true;
+                        distracaoProgresso();
                     }
                 }
             }
