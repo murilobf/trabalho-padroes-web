@@ -23,6 +23,31 @@
     background-color: #531a8f;
 }
 
+.botao.feedback,.botao.apagar{
+    color:white;
+
+    margin-top: 0.3em;
+
+    padding-block: 0.3em;
+    padding-inline: 0.5em;
+}
+
+.botao.apagar{
+    background-color: #ff4444;
+    border-color: #cc2a2a;
+}
+
+.botao.apagar:hover{
+    background-color: #cc2a2a;
+}
+
+.botoes{
+    max-width: 1000px;
+    width: 100%;
+    min-height: 10em;
+
+    display: flex;
+}
 
 form label{
     display: block;
@@ -59,6 +84,17 @@ header{
     width: 3em;
     height: 3em;
     background-color: transparent;
+}
+
+#feedback-usuario{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#feedback-usuario > *{
+    margin: auto;
 }
 
 #modal-distracao {
@@ -207,26 +243,18 @@ main{
 }
 
 nav{
-    width: 50%;
+    width: 60%;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2em;
-}
-
-nav a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav a:hover svg{
-    fill:#531a8f
+    flex-wrap:wrap;
 }
 
 nav svg{
     width: 3em;
+    height: 3em;
     flex-shrink: 0;
 }
 
@@ -253,6 +281,22 @@ nav svg{
     font-size: 2em;
 
     padding: 0.33em;
+    border-radius:5px
+}
+
+#form-feedback{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#textarea-feedback{
+    max-width: 1000px;
+    width: 100%;
+    min-height: 10em;
+
+    box-shadow: 0.3em 0.3em 1em #888888;
+    resize: none;
 }
 
 #texto-inicio {
