@@ -1,6 +1,6 @@
 const barraLateral = document.querySelector(".sidebar");
 const modal = document.getElementById('modal-distracao');
-const videoFoco = document.getElementById('video-foco') || document.getElementById('video-foco-2');
+const videoFoco = document.getElementById('video-foco') || document.getElementById('video-foco-2') || document.getElementById('video-foco-3');
 let distracaoAtiva = false;
 let modalJaDisparado = false;
 
@@ -22,6 +22,11 @@ if (document.getElementById("video-foco")) {
     GATILHOS = [
         { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false },
         { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false }
+    ];
+} else if (document.getElementById("video-foco-4")) {
+    // Tela 3
+    GATILHOS = [
+        { idElemento: 'gif-carrey', tempoDisparo: 51, duracao: 10, tipo: 'gif', disparado: false },
     ];
 }
 

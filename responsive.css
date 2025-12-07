@@ -1,9 +1,21 @@
 @media (max-width: 768px) {
 
-    video {
-        width: 90%;
+    main{
+        padding: 1em;
     }
 
+    video,nav,#form-feedback {
+        width: 90%;
+    }
+    nav{
+        gap:0.5em;
+        margin-block: 2em;
+    }
+    nav svg{
+        height: 2em;
+        width: 2em;
+        border-radius: 50%;
+    }
 }
 
 @media (min-width: 768px) {
