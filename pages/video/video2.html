@@ -3,6 +3,7 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +31,12 @@
 
     <main>
         <img class="gif-rotativo" src="../../videos/carrey.gif" id="gif-carrey">
-        <video controls loop id="video-foco-2">
+        <video controls loop id="video-foco-2" muted>
             <source src="../../videos/video2.mp4">
+        </video>
+
+          <video class="video-distracao-esquerdo" controls loop id="video-mine" muted>
+            <source src="../../videos/video_mine.mp4">
         </video>
 
         <img class="gif-rotativo" src="../../videos/miyagi.gif" id="gif-miyagi">
