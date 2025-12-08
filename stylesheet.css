@@ -417,6 +417,25 @@ video{
     font-size: larger;
 }
 
+.video-distracao-direito{
+    display: none;       
+    position: fixed;     
+    top: 15%;
+    right: 2%;       
+    width: 350px;
+    z-index: 999; 
+   
+}
+
+.video-distracao-esquerdo{
+    display: none;       
+    position: fixed;     
+    top: 15%;
+    left: 1%;       
+    width: 350px;
+    z-index: 999; 
+   
+}
 footer {
     background-color: #000000;
     color: white;
@@ -436,3 +455,4 @@ footer {
     font-size: 0.9em;
     margin: 0.25em 0;
 }
+

@@ -3,32 +3,45 @@ const modal = document.getElementById('modal-distracao');
 const videoFoco = document.getElementById('video-foco') || 
                 document.getElementById('video-foco-2') || 
                 document.getElementById('video-foco-3') ||
-                document.getElementById('video-foco-4');
+                document.getElementById('video-foco-4') ||
+                document.getElementById('video-foco-5');
+const videoDistracao=document.getElementById('video-distracao');
 let distracaoAtiva = false;
 let modalJaDisparado = false;
 
 let GATILHOS = [];
 
 if (document.getElementById("video-foco")) {
-    // Tela 1
+    // Tela 1- rever logica de varios pop-ups
     GATILHOS = [
         { idElemento: 'modal-distracao', tempoDisparo: 5, tipo: 'modal' },
+        { idElemento: 'modal-distracao', tempoDisparo: 10, tipo: 'modal' },
+        { idElemento: 'modal-distracao', tempoDisparo: 15, tipo: 'modal' },
     ];
 } else if (document.getElementById("video-foco-2")) {
     // Tela 2
     GATILHOS = [
         { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false },
-        { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false }
+        { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false },
+        {idElemento:'video-mine',tempoDisparo: 0, duracao: 200,tipo:'video', disparado:false }
     ];
 } else if (document.getElementById("video-foco-3")) {
     // Tela 3
     GATILHOS = [
-        { idElemento: 'botao-da-distracao', tempoDisparo: 180, duracao: 3, tipo: 'mudancaUI', disparado: false } 
+        { idElemento: 'botao-da-distracao', tempoDisparo: 180, duracao: 3, tipo: 'mudancaUI', disparado: false } ,
+        {idElemento:'video-temple-run',tempoDisparo: 0, duracao: 200,tipo:'video', disparado:false }
     ];
 } else if (document.getElementById("video-foco-4")) {
     // Tela 4
     GATILHOS = [
-        { idElemento: 'distracao-progresso', tempoDisparo: 20, duracao: 3, tipo: 'progresso', disparado: false }
+        { idElemento: 'distracao-progresso', tempoDisparo: 20, duracao: 3, tipo: 'progresso', disparado: false },
+        {idElemento:'video-staying-alive',tempoDisparo: 83, duracao: 20,tipo:'video', disparado:false },
+        {idElemento:'video-will-survive',tempoDisparo: 55, duracao: 3,tipo:'video', disparado:false },
+        
+    ];
+}else if(document.getElementById("video-foco-5")){
+     GATILHOS = [        
+        {idElemento:'video-mine',tempoDisparo: 0, duracao: 200,tipo:'video', disparado:false }
     ];
 }
 
@@ -73,6 +86,18 @@ function desativarGif(elemento) {
     // if (distracaoSonora) distracaoSonora.pause();
     console.log('GIF/Distração Visual DESATIVADA.');
     distracaoAtiva = false;
+}
+
+function ativarVideoDistracao(elemento,duracao){
+    elemento.style.display = 'block';
+    elemento.play();
+
+    setTimeout(() => {
+        elemento.pause();           
+        elemento.style.display = 'none'; 
+        elemento.currentTime = 0; 
+    }, duracao * 1000); 
+
 }
 
 function mudarCorBotao(idBotao) {
@@ -126,7 +151,7 @@ if (videoFoco) {
             if (elemento && !gatilho.disparado) { 
                 if (tempoAtual >= gatilho.tempoDisparo) {
                     if (gatilho.tipo === 'modal') {
-                        if (!modalJaDisparado && !distracaoAtiva) {
+                        if (!modalJaDisparado && !distracaoAtiva) {                            
                             ativarModal(elemento);
                         }
                     } else if (gatilho.tipo === 'gif') {
@@ -140,6 +165,9 @@ if (videoFoco) {
                     } else if (gatilho.tipo === 'progresso') {
                         gatilho.disparado = true;
                         distracaoProgresso();
+                    }else if(gatilho.tipo='video') {
+                        gatilho.disparado=true;
+                        ativarVideoDistracao(elemento,gatilho.duracao);
                     }
                 }
             }
