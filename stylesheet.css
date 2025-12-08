@@ -14,6 +14,10 @@
     cursor: pointer;
 }
 
+#botao-da-distracao {
+    transition: background-color 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
 .botao a {
     color: white;
     text-decoration: none;
@@ -196,7 +200,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding:5px 20px 5px 20px
+    padding:5px 20px 5px 20px;
 }
 
 .sidebar.open {
@@ -237,25 +241,35 @@ html,body{
 
 main{
     padding: 5em;
-
     display: flex;
     flex-direction: column;
 }
 
 nav{
-    width: 60%;
+    width: 90%;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    gap: 0.5em;
     flex-wrap:wrap;
+}
+
+main nav {
+    margin-block: 2em;
 }
 
 nav svg{
     width: 3em;
     height: 5em;
     flex-shrink: 0;
+}
+
+main nav svg{
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    transition: fill 0.5s ease;
 }
 
 .nota-estrela{
@@ -287,7 +301,7 @@ nav svg{
 #form-feedback{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 90%;
 }
 
 #textarea-feedback{
@@ -328,7 +342,7 @@ nav svg{
 }
 
 video{
-    width: 60%;
+    width: 90%;
     margin: auto;
 }
 
