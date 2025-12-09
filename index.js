@@ -15,21 +15,21 @@ if (document.getElementById("video-foco")) {
     // Tela 1- rever logica de varios pop-ups
     GATILHOS = [
         { idElemento: 'modal-distracao', tempoDisparo: 5, tipo: 'modal' },
-        { idElemento: 'modal-distracao', tempoDisparo: 10, tipo: 'modal' },
-        { idElemento: 'modal-distracao', tempoDisparo: 15, tipo: 'modal' },
+        {idElemento:'video-mario',tempoDisparo: 5, duracao: 17, tipo:'video', disparado:false }
     ];
 } else if (document.getElementById("video-foco-2")) {
     // Tela 2
     GATILHOS = [
         { idElemento: 'gif-carrey', tempoDisparo: 5, duracao: 4, tipo: 'gif', disparado: false },
         { idElemento: 'gif-miyagi', tempoDisparo: 15, duracao: 3, tipo: 'gif', disparado: false },
-        {idElemento:'video-mine',tempoDisparo: 0, duracao: 200,tipo:'video', disparado:false }
+        {idElemento:'video-bike',tempoDisparo: 0, duracao: 20,tipo:'video', disparado:false }
     ];
 } else if (document.getElementById("video-foco-3")) {
     // Tela 3
     GATILHOS = [
-        { idElemento: 'botao-da-distracao', tempoDisparo: 180, duracao: 3, tipo: 'mudancaUI', disparado: false } ,
-        {idElemento:'video-temple-run',tempoDisparo: 0, duracao: 200,tipo:'video', disparado:false }
+        { idElemento: 'botao-da-distracao', tempoDisparo: 180, duracao: 3, tipo: 'mudancaUI', disparado: false } ,        
+        {idElemento:'video-mine',tempoDisparo: 0, duracao: 233,tipo:'video', disparado:false },
+        {idElemento:'video-guitar',tempoDisparo: 142, duracao: 91,tipo:'video', disparado:false }
     ];
 } else if (document.getElementById("video-foco-4")) {
     // Tela 4
@@ -41,7 +41,12 @@ if (document.getElementById("video-foco")) {
     ];
 }else if(document.getElementById("video-foco-5")){
      GATILHOS = [        
-        {idElemento:'video-mine',tempoDisparo: 0, duracao: 200,tipo:'video', disparado:false }
+       {idElemento:'video-temple-run',tempoDisparo: 0, duracao: 55,tipo:'video', disparado:false },
+       {idElemento:'expressao-1',tempoDisparo: 0, duracao: 6,tipo:'imagem', disparado:false },
+       {idElemento:'expressao-2',tempoDisparo: 7, duracao: 13,tipo:'imagem', disparado:false },
+       {idElemento:'expressao-3',tempoDisparo: 15, duracao: 16,tipo:'imagem', disparado:false },
+       {idElemento:'expressao-4',tempoDisparo: 19, duracao: 19,tipo:'imagem', disparado:false }
+
     ];
 }
 
@@ -96,8 +101,17 @@ function ativarVideoDistracao(elemento,duracao){
         elemento.pause();           
         elemento.style.display = 'none'; 
         elemento.currentTime = 0; 
+        distracaoAtiva=false;
     }, duracao * 1000); 
 
+}
+
+function ativarImagem(elemento,duracao){
+    elemento.style.display = 'block';
+        setTimeout(() => {                 
+        elemento.style.display = 'none'; 
+        distracaoAtiva=false; 
+    }, duracao*1000);
 }
 
 function mudarCorBotao(idBotao) {
@@ -165,9 +179,16 @@ if (videoFoco) {
                     } else if (gatilho.tipo === 'progresso') {
                         gatilho.disparado = true;
                         distracaoProgresso();
-                    }else if(gatilho.tipo='video') {
+                    }else if(gatilho.tipo=='video') {
                         gatilho.disparado=true;
                         ativarVideoDistracao(elemento,gatilho.duracao);
+                    }else if(gatilho.tipo=='imagem'){
+                        if(!distracaoAtiva){
+                            distracaoAtiva=true;
+                            gatilho.disparado=true;
+                            ativarImagem(elemento,gatilho.duracao);
+                        }   
+                       
                     }
                 }
             }
