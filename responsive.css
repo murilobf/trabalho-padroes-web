@@ -46,15 +46,91 @@
         color: #8A38F5;
     }
 
-    .logo{
+    .logo {
         padding-left: 150px;
     }
 
-    main video,nav,#form-feedback {
+    main video,
+    nav,
+    #form-feedback {
         width: 60%;
     }
 
-    main nav{
-        gap:2em;
+    main nav {
+        gap: 2em;
+    }
+
+    .video-distracao-pequeno {
+        top: 15%;
+        position: fixed;
+        left: 1%;
+        width: 350px;
+        max-width: none;
+        height: auto;
+    }
+
+    #modal-distracao {
+        left: auto;
+        right: 20px;
+        bottom: 20px;
+        transform: translateX(120%);
+    }
+
+    #modal-distracao.modal-ativo {
+        transform: translateX(0);
+    }
+
+    .modal-conteudo {
+        width: auto;
+        max-width: 400px;
+    }
+
+    .gif-rotativo,
+    .gif-ativo {
+        width: 200px;
+        top: 10%;
+        right: 5%;
+    }
+
+    .video-distracao-pequeno {
+        position: fixed;
+        top: 15%;
+        left: 1%;
+        width: 350px;
+        max-width: none;
+        height: auto;
+    }
+
+    .video-distracao-direito {
+        display: none;
+        position: fixed !important;
+        top: 20% !important;
+        right: 0% !important;
+        width: 350px !important;
+        height: 450px !important;
+    }
+
+    .video-distracao-esquerdo {
+        display: none;
+        position: fixed !important;
+        top: 20% !important;
+        left: 0% !important;
+        width: 350px !important;
+        height: 450px !important;
+    }
+
+    .equacoes {
+        display: none;
+        position: fixed !important;
+        top: 31% !important;
+        left: 0% !important;
+        width: 350px !important;
+        height: 280px !important;
+    }
+
+    .video-distracao-direito.ativo,
+    .video-distracao-esquerdo.ativo,
+    .equacoes.ativo {
+        display: block;
     }
 }
