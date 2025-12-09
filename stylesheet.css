@@ -420,9 +420,11 @@ video{
 .video-distracao-direito{
     display: none;       
     position: fixed;     
-    top: 15%;
-    right: 2%;       
+    top: 20%;
+    right: 0%;       
     width: 350px;
+    height:450px;
+    object-fit: cover;
     z-index: 999; 
    
 }
@@ -430,9 +432,32 @@ video{
 .video-distracao-esquerdo{
     display: none;       
     position: fixed;     
+    top: 20%;
+    left: 0%;       
+    width: 350px;
+    height:450px;
+    object-fit: cover;
+    z-index: 999; 
+   
+}
+
+.video-distracao-pequeno{
+    display: none;       
+    position: fixed;     
     top: 15%;
     left: 1%;       
     width: 350px;
+    z-index: 999; 
+   
+}
+
+.equacoes{
+    display: none;       
+    position: fixed;     
+    top: 31%;
+    left: 0%;       
+    width: 350px;
+    height:280px;
     z-index: 999; 
    
 }
