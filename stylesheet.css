@@ -233,9 +233,14 @@ header {
 }
 
 .logo {
-    margin: 0 auto;
-    width: 5em;
-    height: 4em;
+    margin: auto;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.logo img{
+    max-width: 100px;
+    max-height: 70px;
 }
 
 .sidebar {
