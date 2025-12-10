@@ -195,24 +195,6 @@ header {
     margin: auto;
 }
 
-#modal-distracao {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    right: auto;
-    z-index: 1000;
-    transform: translate(-50%, 120%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-
-#modal-distracao.modal-ativo {
-    transform: translate(-50%, 0);
-    opacity: 1;
-    visibility: visible;
-}
-
 .gif-rotativo {
     display: none;
     position: fixed;
