@@ -1,4 +1,9 @@
 @media (min-width: 768px) {
+
+    main{
+        padding: 5em;
+    }
+
     .botaoMenu {
         display: none;
     }
@@ -133,4 +138,11 @@
     .equacoes.ativo {
         display: block;
     }
+
+    .membros {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
 }
