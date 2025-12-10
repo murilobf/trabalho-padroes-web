@@ -81,7 +81,7 @@
    #modal-distracao {
         position: fixed;
         bottom: 20px;
-        left: 20px;
+        right: 20px;
         width: 300px;
         z-index: 1000;
         transform: translateY(20px);
@@ -148,8 +148,7 @@
     }
 
     .video-distracao-direito,
-    .video-distracao-esquerdo,
-    .equacoes {
+    .video-distracao-esquerdo{
         position: fixed;
         object-fit: cover;
     }
@@ -170,9 +169,10 @@
 
     .equacoes {
         top: 31%;
-        left: 0;
-        width: 350px;
+        left: 2%;
+        width: 450px;
         height: 280px;
+        position: fixed;
     }
 
     .video-distracao-direito.ativo,
