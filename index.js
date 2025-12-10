@@ -1,3 +1,11 @@
+function abrirModal() {
+    document.getElementById('modal-aviso-overlay').classList.add('ativo');
+}
+
+function fecharModal() {
+    document.getElementById('modal-aviso-overlay').classList.remove('ativo');
+}
+
 const GABARITO = {
     'quiz1': { correta: 'azul', pergunta: 'Qual era a cor do banheiro no início do vídeo?'},
     'quiz2': { correta: '11', pergunta: 'Quantas vezes eles tocam na bola no vídeo?'},
@@ -27,13 +35,13 @@ let GATILHOS = [];
 
 const videoElement = document.querySelector("video[id^='video-foco']");
 
-const videoSrc = videoElement.querySelector("source").getAttribute("src");
+if (videoElement){
+    const videoSrc = videoElement.querySelector("source").getAttribute("src");
 
-const videoID = videoSrc.split("/").pop();
+    const videoID = videoSrc.split("/").pop();
 
-const storageKey = `video_assistido_${videoID}`;
-
-document.addEventListener("DOMContentLoaded", () => {
+    const storageKey = `video_assistido_${videoID}`;
+    document.addEventListener("DOMContentLoaded", () => {
     const jaAssistiu = localStorage.getItem(storageKey);
 
     if (jaAssistiu === "true") {
@@ -43,13 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
         videoElement.style.pointerEvents = "none";
         videoElement.style.opacity = 0.6;
     }
-});
+    });
 
-videoElement.addEventListener("ended", () => {
-    videoElement.controls = false;
-    videoElement.pause();
-    localStorage.setItem(storageKey, "true");
-});
+    videoElement.addEventListener("ended", () => {
+        videoElement.controls = false;
+        videoElement.pause();
+        localStorage.setItem(storageKey, "true");
+    });
+}
 
 if (document.getElementById("video-foco")) {
     if (isMobile()) {
@@ -325,4 +334,48 @@ function gerarRelatorio() {
     }
 
     containerResultados.innerHTML = htmlDetalhes;
+}
+
+const formularioFeedback = document.getElementById('form-feedback');
+
+if (formularioFeedback) {
+    formularioFeedback.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const campoTexto = document.getElementById('textarea-feedback');
+        const botaoEnviar = formularioFeedback.querySelector('.botao.feedback');
+
+        if(campoTexto) {
+            const mensagemUsuario = campoTexto.value;
+            if (!mensagemUsuario.trim()) {
+                alert("Por favor, escreva algo antes de enviar.");
+                return;
+            }
+            const emailDestino = "souza.2023@alunos.utfpr.edu.br"; 
+            const assunto = "Feedback do Jogo de Foco";
+    
+            const linkMailto = `mailto:${emailDestino}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(mensagemUsuario)}`;
+    
+            window.location.href = linkMailto;
+
+            const textoOriginal = botaoEnviar.value;
+            botaoEnviar.value = "Abrindo E-mail";
+            botaoEnviar.style.backgroundColor = "#28a745"; 
+            botaoEnviar.style.borderColor = "#28a745";
+            botaoEnviar.disabled = true; 
+
+            campoTexto.value = "";
+
+            setTimeout(() => {
+                botaoEnviar.value = "Obrigado!";
+                
+                setTimeout(() => {
+                    botaoEnviar.value = textoOriginal;
+                    botaoEnviar.style.backgroundColor = ""; 
+                    botaoEnviar.style.borderColor = "";
+                    botaoEnviar.disabled = false;
+                }, 2000);
+            }, 1000);
+        }
+    });
 }

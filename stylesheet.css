@@ -15,6 +15,103 @@
     cursor: pointer;
 }
 
+.modal-aviso{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 2000; 
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.modal-aviso.ativo {
+    display: flex;
+}
+
+/* A caixa branca do modal */
+.modal-box {
+    background-color: white;
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 500px; /* Largura máxima para Desktop */
+    width: 90%;       /* Ocupa 90% da tela no Mobile */
+    animation: aparecer 0.3s ease-out;
+}
+
+.modal-box h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.modal-box p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 1.5em;
+}
+
+/* Container dos botões do modal */
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Estilo do botão de confirmação (link) */
+.botao-confirmar {
+    text-decoration: none;
+    background-color: #7E27DB;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.botao-confirmar:hover {
+    background-color: #531a8f;
+}
+
+/* Estilo do botão de voltar */
+.botao-cancelar {
+    background-color: transparent;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+.botao-cancelar:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Animação suave de entrada */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 #botao-da-distracao {
     transition: background-color 0.8s ease-in-out, transform 0.8s ease-in-out;
 }

@@ -37,7 +37,6 @@
             <p>Sua missão: manter o foco no que realmente importa</p>
             <p>Vamos começar?</p>
             <br>
-            <h2><span style="color:red">Atenção:</span> para a experiência correta, não entre em tela cheia, não pause nem avance os vídeos e deixe o som ligado. Obrigado!</h2>
         </section>
 
         <nav>
@@ -79,13 +78,26 @@
             </svg>
         </nav>
 
-        <button class="botao" type="button" onclick="location.href='./video/video1.html'">Jogar</button>
+        <button onclick="abrirModal()" class="botao">Jogar</button>
     </main>
 
     <footer>
         <p class="footer-content">&copy; 2025 Awareness Quiz. Todos os direitos reservados. Desenvolvido por
             estudantes de Sistemas de Informação.</p>
     </footer>
+
+    <div id="modal-aviso-overlay" class="modal-aviso">
+        <div class="modal-box">
+            <h2><span style="color:red">Atenção:</span></h2>
+            <p>Para a experiência correta, não entre em tela cheia, não pause nem avance os vídeos e deixe o som ligado.</p>
+            <p><strong>Obrigado!</strong></p>
+            
+            <div class="modal-buttons">
+                <button onclick="fecharModal()" class="botao-cancelar">Voltar</button>
+                <a href="./video/video1.html" class="botao-confirmar">Entendi, vamos jogar!</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
