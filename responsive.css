@@ -78,17 +78,68 @@
         height: auto;
     }
 
-    #modal-distracao {
-        left: auto;
-        right: 20px;
+   #modal-distracao {
+        position: fixed;
         bottom: 20px;
-        transform: translateX(120%);
+        left: 20px;
+        width: 300px;
+        z-index: 1000;
+        transform: translateY(20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        font-family: 'Inter', sans-serif;
+        padding: 30px; 
+        overflow: hidden;
     }
 
     #modal-distracao.modal-ativo {
-        transform: translateX(0);
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    #modal-distracao > div {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
+    #modal-distracao h3 {
+        margin: 0;
+        font-size: 1.1em;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    #modal-distracao p {
+        margin: 0;
+        font-size: 0.9em;
+        color: #666;
+        line-height: 1.4;
+    }
+
+    #modal-distracao button {
+        align-self: flex-end; 
+        background-color: #6A12D7; 
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.85em;
+        transition: background 0.2s;
+    }
+
+    #modal-distracao button:hover {
+        background-color: #531a8f;
+    }
     .gif-rotativo,
     .gif-ativo {
         width: 200px;

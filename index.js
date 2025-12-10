@@ -1,8 +1,8 @@
-function abrirModal() {
+function abrirModalAviso() {
     document.getElementById('modal-aviso-overlay').classList.add('open');
 }
 
-function fecharModal() {
+function fecharModalAviso() {
     document.getElementById('modal-aviso-overlay').classList.remove('open');
 }
 
@@ -36,30 +36,40 @@ let GATILHOS = [];
 const videoElement = document.querySelector("video[id^='video-foco']");
 
 if (videoElement){
-    const videoSrc = videoElement.querySelector("source").getAttribute("src");
+    const source = videoElement.querySelector("source");
+    
+    if(source) {
+        const videoSrc = source.getAttribute("src");
+        const videoID = videoSrc.split("/").pop(); 
+        const storageKey = `video_assistido_${videoID}`;
 
-    const videoID = videoSrc.split("/").pop();
+        document.addEventListener("DOMContentLoaded", () => {
+            const jaAssistiu = localStorage.getItem(storageKey);
+            console.log("Status Assistido:", jaAssistiu);
 
-    const storageKey = `video_assistido_${videoID}`;
-    document.addEventListener("DOMContentLoaded", () => {
-    const jaAssistiu = localStorage.getItem(storageKey);
+            if (jaAssistiu === "true") {
+                console.log("Vídeo já assistido. Bloqueando...");
+                videoElement.controls = false;
+                videoElement.currentTime = videoElement.duration;
+                videoElement.pause();
+                videoElement.style.pointerEvents = "none";
+                videoElement.style.opacity = 0.6;
+            } else {
+                console.log("Vídeo novo. Liberando...");
+                videoElement.controls = true;
+                videoElement.style.pointerEvents = "auto";
+                videoElement.style.opacity = 1;
+            }
+        });
 
-    if (jaAssistiu === "true") {
-        videoElement.controls = false;
-        videoElement.currentTime = videoElement.duration;
-        videoElement.pause();
-        videoElement.style.pointerEvents = "none";
-        videoElement.style.opacity = 0.6;
+        videoElement.addEventListener("ended", () => {
+            videoElement.controls = false;
+            videoElement.pause();
+            localStorage.setItem(storageKey, "true");
+            console.log("Vídeo finalizado. Salvo no storage.");
+        });
     }
-    });
-
-    videoElement.addEventListener("ended", () => {
-        videoElement.controls = false;
-        videoElement.pause();
-        localStorage.setItem(storageKey, "true");
-    });
 }
-
 if (document.getElementById("video-foco")) {
     if (isMobile()) {
         GATILHOS = [
@@ -334,6 +344,15 @@ function gerarRelatorio() {
     }
 
     containerResultados.innerHTML = htmlDetalhes;
+
+    setTimeout(() => {
+        Object.keys(localStorage).forEach(key => {
+            if (key.startsWith('quiz') || key.startsWith('video_assistido_')) {
+                localStorage.removeItem(key);
+            }
+        });
+        console.log("Dados do teste anterior foram limpos.");
+    }, 500);
 }
 
 const formularioFeedback = document.getElementById('form-feedback');
