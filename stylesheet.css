@@ -30,19 +30,18 @@
     box-sizing: border-box;
 }
 
-.modal-aviso.ativo {
+.modal-aviso.open {
     display: flex;
 }
 
-/* A caixa branca do modal */
 .modal-box {
     background-color: white;
     padding: 2em;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     text-align: center;
-    max-width: 500px; /* Largura máxima para Desktop */
-    width: 90%;       /* Ocupa 90% da tela no Mobile */
+    max-width: 500px; 
+    width: 90%;  
     animation: aparecer 0.3s ease-out;
 }
 
@@ -57,7 +56,6 @@
     margin-bottom: 1.5em;
 }
 
-/* Container dos botões do modal */
 .modal-buttons {
     display: flex;
     flex-direction: column;
@@ -65,7 +63,6 @@
     justify-content: center;
 }
 
-/* Estilo do botão de confirmação (link) */
 .botao-confirmar {
     text-decoration: none;
     background-color: #7E27DB;
@@ -83,7 +80,6 @@
     background-color: #531a8f;
 }
 
-/* Estilo do botão de voltar */
 .botao-cancelar {
     background-color: transparent;
     color: #555;
@@ -100,7 +96,6 @@
     color: #000;
 }
 
-/* Animação suave de entrada */
 @keyframes aparecer {
     from {
         opacity: 0;
