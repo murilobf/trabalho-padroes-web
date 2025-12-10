@@ -85,11 +85,6 @@
         transform: translateX(0);
     }
 
-    .modal-conteudo {
-        width: auto;
-        max-width: 400px;
-    }
-
     .gif-rotativo,
     .gif-ativo {
         width: 200px;
@@ -139,5 +134,4 @@
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
     }
-
 }
