@@ -5,6 +5,7 @@
 .botao {
     text-decoration: none;
     background-color: #7E27DB;
+    color: white;
     font-size: 2em;
     margin: auto;
     padding-block: 0.4em;
@@ -16,11 +17,6 @@
 
 #botao-da-distracao {
     transition: background-color 0.8s ease-in-out, transform 0.8s ease-in-out;
-}
-
-.botao a {
-    color: white;
-    text-decoration: none;
 }
 
 .botao:hover {
