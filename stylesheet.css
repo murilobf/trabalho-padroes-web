@@ -52,7 +52,6 @@
     max-width: 1000px;
     width: 100%;
     min-height: 10em;
-
     display: flex;
 }
 
@@ -120,37 +119,6 @@ header {
     transform: translate(-50%, 0);
     opacity: 1;
     visibility: visible;
-}
-
-.modal-conteudo {
-    width: 90vw;
-    max-width: 400px;
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.modal-conteudo h3 {
-    margin-top: 0;
-    font-size: 1.1em;
-    color: #8A38F5;
-}
-
-.modal-conteudo p {
-    font-size: 0.9em;
-    margin-bottom: 10px;
-}
-
-.modal-conteudo button {
-    background-color: #7E27DB;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .gif-rotativo {
@@ -354,18 +322,10 @@ video {
     width: 95%;
     margin: auto;
 }
-
-.video-atrapalhar {
-    position: relative;
-    width: 25%;
-    transform: translate(150%, 100%) rotate(45deg);
-}
-
 .container-sobre {
     display: flex;
     flex-direction: column;
     gap: 30px;
-
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px 20px;
@@ -447,16 +407,18 @@ a.github{
 .video-distracao-esquerdo,
 .equacoes {
     display: none;
-    position: relative !important;
-    width: 90% !important;
-    max-width: 300px !important;
-    height: auto !important;
-    margin: 1em auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    top: auto !important;
-    bottom: auto !important;
-    object-fit: contain;
+    position: relative;
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    margin: 1em auto;
+}
+
+.video-distracao-direito.ativo,
+.video-distracao-esquerdo.ativo,
+.equacoes.ativo,
+.video-distracao-pequeno.ativo {
+    display: block;
 }
 
 .video-distracao-pequeno {
@@ -467,13 +429,6 @@ a.github{
     height: auto;
     margin: 1em auto;
     z-index: 999;
-}
-
-.video-distracao-direito.ativo,
-.video-distracao-esquerdo.ativo,
-.equacoes.ativo,
-.video-distracao-pequeno.ativo {
-    display: block;
 }
 
 #lista-detalhada {
@@ -500,7 +455,7 @@ a.github{
 .gabarito-texto {
     font-size: 0.9em;
     color: #555;
-    font-style: italic;
+    font-style: italic; 
 }
 
 footer {
