@@ -14,7 +14,7 @@
     <title>FOCO</title>
 </head>
 
-<body>
+<body onload="gerarRelatorio()">
     <header>
         <button onclick=menuClicado() class="botaoMenu">
             <img class="hamburguer" src="../imgs/hamburguer.png" alt="Botão de menu">
@@ -33,7 +33,7 @@
         <section id="feedback">
             <h1>Seus Resultados</h1>
 
-            <p class="nota-texto">XX% das perguntas respondidas corretamente</p>
+            <p class="nota-texto">Carregando seus resultados...</p>
             <p class="nota-estrela   ">
                 <span>★</span>
                 <span>★</span>
@@ -41,7 +41,7 @@
                 <span>★</span>
                 <span>★</span>
             </p>
-            <p class="texto-feedback" style="font-size: 2em; font-weight: bold;">PÁGINA SOB CONSTRUÇÃO</p>
+            <div id="lista-detalhada"></div>
         </section>
 
         <section id="feedback-usuario">

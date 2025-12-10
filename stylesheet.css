@@ -23,6 +23,12 @@
     background-color: #531a8f;
 }
 
+.botao:disabled {
+    background-color: gray;
+    border-color: darkgray;
+    cursor: not-allowed;
+}
+
 .botao.feedback,
 .botao.apagar {
     color: white;
@@ -468,6 +474,33 @@ a.github{
 .equacoes.ativo,
 .video-distracao-pequeno.ativo {
     display: block;
+}
+
+#lista-detalhada {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.resultado-item {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.resultado-item.acerto {
+    background-color: rgba(0, 255, 0, 0.1);
+    border-left: 5px solid green;
+}
+
+.resultado-item.erro {
+    background-color: rgba(255, 0, 0, 0.1);
+    border-left: 5px solid red;
+}
+
+.gabarito-texto {
+    font-size: 0.9em;
+    color: #555;
+    font-style: italic;
 }
 
 footer {

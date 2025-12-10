@@ -1,3 +1,11 @@
+const GABARITO = {
+    'quiz1': { correta: 'azul', pergunta: 'Qual era a cor do banheiro no início do vídeo?'},
+    'quiz2': { correta: '11', pergunta: 'Quantas vezes eles tocam na bola no vídeo?'},
+    'quiz3': { correta: 'Botão de próximo mudou a cor', pergunta: 'O que mudou na interface da página durante o vídeo?'},
+    'quiz4': { correta: '100', pergunta: 'Quantas batidas por minuto deve ser o ritmo ao realizar a manobra?'},
+    'quiz5': { correta: '15h34', pergunta: 'Que horas o Lorde Smithe foi assasinado?'}
+};
+
 const MOBILE_BREAKPOINT = 768;
 
 function isMobile() {
@@ -246,7 +254,75 @@ function menuClicado() {
     barraLateral.classList.toggle('open');
 }
 
-function pegaResposta() {
-    const resposta = document.querySelector('input[name="quiz1"]:checked').value;
-    console.log(resposta)
+function pegaResposta(idQuiz, proximaPagina) {
+    const opcoes = document.getElementsByName(idQuiz);
+    let respostaSelecionada = null;
+
+    for (const op of opcoes) {
+        if (op.checked) {
+            respostaSelecionada = op.value;
+            respondeuQuiz = true;
+            break;
+        }
+    }
+
+    localStorage.setItem(idQuiz, respostaSelecionada);
+
+    console.log(`Resposta para ${idQuiz} armazenada: ${respostaSelecionada}`);
+
+    window.location.href = proximaPagina;
+}
+
+function habilitarBotao() {
+    const btn = document.querySelector('.botao');
+    if (btn) {
+        btn.disabled = false;
+    }
+}
+
+function gerarRelatorio() {
+    const containerResultados = document.getElementById('lista-detalhada');
+    const textoNota = document.querySelector('.nota-texto');
+    const containerEstrelas = document.querySelector('.nota-estrela');
+    
+    if (!containerResultados) return;
+
+    let acertos = 0;
+    let totalPerguntas = 0;
+    let htmlDetalhes = '';
+
+    for (const [id, dados] of Object.entries(GABARITO)) {
+        const respostaUsuario = localStorage.getItem(id);
+        
+        if (!respostaUsuario) continue; 
+
+        totalPerguntas++;
+        const acertou = respostaUsuario === dados.correta;
+        
+        if (acertou) acertos++;
+
+        htmlDetalhes += `
+            <div class="resultado-item ${acertou ? 'acerto' : 'erro'}">
+                <p><strong>${dados.pergunta}</strong></p>
+                <p>Sua resposta: <span>${respostaUsuario}</span> ${acertou ? '✅' : '❌'}</p>
+                ${!acertou ? `<p class="gabarito-texto">Correta: ${dados.correta}</p>` : ''}
+            </div>
+            <hr>
+        `;
+    }
+
+    const porcentagem = totalPerguntas === 0 ? 0 : Math.round((acertos / totalPerguntas) * 100);
+    
+    if(textoNota) textoNota.innerText = `${porcentagem}% das perguntas respondidas corretamente`;
+
+    if(containerEstrelas) {
+        const estrelasAtivas = Math.round((porcentagem / 100) * 5);
+        let estrelasHTML = '';
+        for(let i=0; i<5; i++) {
+            estrelasHTML += `<span style="color: ${i < estrelasAtivas ? 'gold' : '#ccc'}">★</span>`;
+        }
+        containerEstrelas.innerHTML = estrelasHTML;
+    }
+
+    containerResultados.innerHTML = htmlDetalhes;
 }

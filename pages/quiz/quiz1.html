@@ -28,7 +28,7 @@
     <main>
             <h1>Quiz</h1>
 
-            <form>
+            <form onchange="habilitarBotao()">
                 <h2>Qual era a cor do banheiro no início do vídeo?</h2>
 
                 <label>
@@ -90,7 +90,7 @@
                 </svg>
             </nav>
 
-            <a href="../video/video2.html" onclick="pegaResposta()" class="botao">Próximo</a>
+            <button class="botao" type="button" onclick="pegaResposta('quiz1', '../video/video2.html')" class="botao" disabled>Próximo</button>
             
         </main>
         
