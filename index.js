@@ -326,7 +326,6 @@ function gerarRelatorio() {
                 <p>Sua resposta: <span>${respostaUsuario}</span> ${acertou ? '✅' : '❌'}</p>
                 ${!acertou ? `<p class="gabarito-texto">Correta: ${dados.correta}</p>` : ''}
             </div>
-            <hr>
         `;
     }
 
