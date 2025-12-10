@@ -76,6 +76,11 @@
     cursor: pointer;
 }
 
+#modal-distracao {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .botao-confirmar:hover {
     background-color: #531a8f;
 }
