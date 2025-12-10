@@ -100,23 +100,21 @@
     .video-distracao-esquerdo,
     .equacoes {
         position: fixed;
-        margin: 0;
+        object-fit: cover;
     }
 
     .video-distracao-direito {
-        top: 20%;
-        right: 0%;
-        width: 350px;
-        height: 450px;
-        max-width: none;
+        top: 15%;
+        right: 2%;
+        width: 360px;
+        height: 550px;
     }
 
     .video-distracao-esquerdo {
-        top: 20%;
-        left: 0%;
-        width: 350px;
-        max-width: none;
-        height: 450px;
+        top: 15%;
+        left: 2%;
+        max-width: 360px;
+        height: 550px;
     }
 
     .equacoes {

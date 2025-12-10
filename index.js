@@ -1,9 +1,9 @@
 function abrirModal() {
-    document.getElementById('modal-aviso-overlay').classList.add('ativo');
+    document.getElementById('modal-aviso-overlay').classList.add('open');
 }
 
 function fecharModal() {
-    document.getElementById('modal-aviso-overlay').classList.remove('ativo');
+    document.getElementById('modal-aviso-overlay').classList.remove('open');
 }
 
 const GABARITO = {
