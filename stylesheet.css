@@ -441,17 +441,20 @@ a.github{
 .video-distracao-esquerdo,
 .equacoes {
     display: none;
-    position: relative !important;
-    width: 90% !important;
-    max-width: 300px !important;
-    height: auto !important;
-    margin: 1em auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    top: auto !important;
-    bottom: auto !important;
-    object-fit: contain;
+    position: relative;
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    margin: 1em auto;
 }
+
+.video-distracao-direito.ativo,
+.video-distracao-esquerdo.ativo,
+.equacoes.ativo,
+.video-distracao-pequeno.ativo {
+    display: block;
+}
+
 
 .video-distracao-pequeno {
     display: none;
@@ -461,13 +464,6 @@ a.github{
     height: auto;
     margin: 1em auto;
     z-index: 999;
-}
-
-.video-distracao-direito.ativo,
-.video-distracao-esquerdo.ativo,
-.equacoes.ativo,
-.video-distracao-pequeno.ativo {
-    display: block;
 }
 
 footer {
