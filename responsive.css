@@ -59,6 +59,12 @@
         padding-left: 150px;
     }
 
+    .nota-estrela {
+        font-size: 4em;
+        padding: 0 0.5em;
+        width: fit-content;
+    }
+
     main video,
     nav,
     #form-feedback {
@@ -78,7 +84,7 @@
         height: auto;
     }
 
-   #modal-distracao {
+    #modal-distracao {
         position: fixed;
         bottom: 20px;
         left: 20px;
@@ -140,6 +146,7 @@
     #modal-distracao button:hover {
         background-color: #531a8f;
     }
+
     .gif-rotativo,
     .gif-ativo {
         width: 200px;
@@ -180,6 +187,10 @@
     .equacoes.ativo,
     .video-distracao-pequeno.ativo {
         display: inline-block;
+    }
+
+    .resultado-item {
+        width: auto;
     }
 
     .membros {
