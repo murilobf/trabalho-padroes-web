@@ -30,26 +30,26 @@
 
             <h1>Quiz</h1>
 
-                <form>
+                <form onchange="habilitarBotao()">
                     <h2>Que horas o Lorde Smithe foi assasinado?</h2>
 
                     <label>
-                        <input type="radio" name="quiz5">
+                        <input type="radio" name="quiz5" value="15h35">
                         15h35
                     </label>
 
                     <label>
-                        <input type="radio" name="quiz5">
+                        <input type="radio" name="quiz5" value="15h34">
                         15h34
                     </label>
 
                     <label>
-                        <input type="radio" name="quiz5">
+                        <input type="radio" name="quiz5" value="3h35">
                         3h35
                     </label>
 
                     <label>
-                        <input type="radio" name="quiz5">
+                        <input type="radio" name="quiz5" value="3h34">
                         3h34
                     </label>
                 </form>
@@ -92,7 +92,7 @@
             </svg>
         </nav>
 
-        <a href="../relatorio.html" onclick="pegaResposta()" class="botao">Finalizar</a>
+        <button class="botao" type="button" onclick="pegaResposta('quiz5', '../relatorio.html')" disabled>Próximo</button>
 
     </main>
 

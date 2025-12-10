@@ -30,26 +30,26 @@
 
             <h1>Quiz</h1>
 
-                <form>
+                <form onchange="habilitarBotao()">
                     <h2>Quantas vezes eles tocam na bola no vídeo?</h2>
 
                     <label>
-                        <input type="radio" name="quiz2">
+                        <input type="radio" name="quiz2" value="8">
                         8
                     </label>
 
                     <label>
-                        <input type="radio" name="quiz2">
+                        <input type="radio" name="quiz2" value="9">
                         9
                     </label>
 
                     <label>
-                        <input type="radio" name="quiz2">
+                        <input type="radio" name="quiz2" value="10">
                         10
                     </label>
 
                     <label>
-                        <input type="radio" name="quiz2">
+                        <input type="radio" name="quiz2" value="11">
                         11
                     </label>
                 </form>
@@ -92,7 +92,7 @@
             </svg>
         </nav>
 
-        <a href="../video/video3.html" onclick="pegaResposta()" class="botao">Próximo</a>
+        <button class="botao" type="button" onclick="pegaResposta('quiz2', '../video/video3.html')" disabled>Próximo</button>
 
     </main>
 

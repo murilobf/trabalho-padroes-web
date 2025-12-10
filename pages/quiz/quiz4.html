@@ -30,26 +30,26 @@
 
             <h1>Quiz</h1>
 
-                <form>
+                <form onchange="habilitarBotao()">
                     <h2>Quantas batidas por minuto deve ser o ritmo ao realizar a manobra?</h2>
 
                     <label>
-                        <input type="radio" name="quiz4">
+                        <input type="radio" name="quiz4" value="100">
                         100
                     </label>
 
                     <label>
-                        <input type="radio" name="quiz4">
+                        <input type="radio" name="quiz4" value="110">
                         110
                     </label>
 
                     <label>
-                        <input type="radio" name="quiz4">
+                        <input type="radio" name="quiz4" value="120">
                         120
                     </label>
 
                     <label>
-                        <input type="radio" name="quiz4">
+                        <input type="radio" name="quiz4" value="130">
                         130
                     </label>
                 </form>
@@ -92,7 +92,7 @@
             </svg>
         </nav>
 
-        <a href="../video/video5.html" onclick="pegaResposta()" class="botao">Próximo</a>
+        <button class="botao" type="button" onclick="pegaResposta('quiz4', '../video/video5.html')" disabled>Próximo</button>
 
     </main>
 
