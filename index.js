@@ -78,7 +78,7 @@ if (document.getElementById("video-foco")) {
     }
     else {
         GATILHOS = [
-            { idElemento: 'botao-da-distracao', tempoDisparo: 180, duracao: 3, tipo: 'mudancaUI', disparado: false },
+            { idElemento: 'botao-da-distracao', tempoDisparo: 152, duracao: 3, tipo: 'mudancaUI', disparado: false },
             { idElemento: 'video-mine', tempoDisparo: 0, duracao: 233, tipo: 'video', disparado: false },
             { idElemento: 'video-guitar', tempoDisparo: 142, duracao: 91, tipo: 'video', disparado: false }
         ];
@@ -164,7 +164,7 @@ function mudarCorBotao(idBotao) {
     const botao = document.getElementById(idBotao);
 
     if (botao) {
-        botao.style.backgroundColor = '#461b65ff';
+        botao.style.backgroundColor = '#ff00bfff';
         botao.style.transform = 'scale(1.1)';
 
         console.log('Distração de UI: Cor mudando suavemente via ID.');
